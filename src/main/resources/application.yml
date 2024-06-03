@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: logging-service
+          uri: https://localhost:8081
+          predicates:
+            - Path=/logs
+          filters:
+            - PrefixPath=/api/v1
